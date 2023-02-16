@@ -1,7 +1,7 @@
 from farm.builders.interfaces.abstract_animal_builder import AbstractAnimalBuilder
 from farm.domain.single_entities.chicken import Chicken
 
-class ConcreteChickenBuilder(AbstractAnimalBuilder):
+class ChickenBuilder(AbstractAnimalBuilder):
 
     def __init__(self):
         self.chicken = Chicken()

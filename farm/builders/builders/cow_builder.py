@@ -1,5 +1,5 @@
 
-class ConcreteCowBuilder(AbstractAnimalBuilder):
+class CowBuilder(AbstractAnimalBuilder):
 
     def __init__(self):
         self.cow = Cow()

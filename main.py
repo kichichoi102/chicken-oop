@@ -1,17 +1,17 @@
-from farm.domain.single_entities.chicken import Chicken
-from farm.builder import Builder
-from farm.visitors.feed_visitor import FeedVisitor
-from farm.visitors.mate_visitor import MateVisitor
-from farm.visitors.birth_visitor import BirthVisitor
-from farm.visitors.speak_visitor import SpeakVisitor
+# from farm.domain.single_entities.chicken import Chicken
+# from farm.builder import Builder
+# from farm.visitors.feed_visitor import FeedVisitor
+# from farm.visitors.mate_visitor import MateVisitor
+# from farm.visitors.birth_visitor import BirthVisitor
+# from farm.visitors.speak_visitor import SpeakVisitor
 
-from farm.builders.concrete.single_entities.chicken_builder import ConcreteChickenBuilder
-from farm.builders.concrete.collections.chicken_coop_builder import ConcreteChickenCoopBuilder
+from farm.builders.builders.chicken_builder import ChickenBuilder
+from farm.builders.concrete.chicken_coop_builder import ConcreteChickenCoopBuilder
 from farm.builders.directors.animal_habitat_director import AnimalHabitatDirector
 
 from farm.domain.collections.chicken_coop import ChickenCoop
 
-chicken_builder = ConcreteChickenBuilder()
+chicken_builder = ChickenBuilder()
 chicken_coop_builder = ConcreteChickenCoopBuilder()
 director = AnimalHabitatDirector(chicken_coop_builder)
 director.build_habitat(10, "Wood")
