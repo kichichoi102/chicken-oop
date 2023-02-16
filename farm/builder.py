@@ -1,5 +1,5 @@
-from farm.animals.chicken import Chicken
-from farm.animals.cow import Cow
+from farm.domain.single_entities.chicken import Chicken
+from farm.domain.single_entities.cow import Cow
 
 class Builder:
     def __init__(self):

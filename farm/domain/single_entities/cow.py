@@ -1,4 +1,4 @@
-from farm.animals.animal import Animal
+from farm.domain.single_entities.animal import Animal
 
 class Cow(Animal):
     def __init__(self, species, breed, name, age, gender, color, number_of_horns):
