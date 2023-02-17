@@ -5,7 +5,7 @@
 # from farm.visitors.birth_visitor import BirthVisitor
 # from farm.visitors.speak_visitor import SpeakVisitor
 
-from farm.builders.builders.chicken_builder import ChickenBuilder
+from farm.builders.animal_builders.chicken_builder import ChickenBuilder
 from farm.builders.concrete.chicken_coop_builder import ConcreteChickenCoopBuilder
 from farm.builders.directors.animal_habitat_director import AnimalHabitatDirector
 
