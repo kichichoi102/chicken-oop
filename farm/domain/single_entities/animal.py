@@ -1,12 +1,6 @@
 class Animal:
-    def __init__(self):
+    def __init__(self)  -> None:
         pass
-        # self.species = species
-        # self.breed = breed
-        # self.name = name
-        # self.age = age
-        # self.gender = gender
-        # self.color = color
 
-    def introduce(self):
+    def introduce(self) -> None:
         print(f"Hi there! my name is {self.name}, and I am a {self.age} year old {self.species}!")
