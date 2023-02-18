@@ -6,8 +6,10 @@ Based on OOP oriented concepts in Python I should create a model (python script)
 2. add tests
 3. add methods to get animals in habitat by name
 4. implement visitors in builder
-5. add documentation directory with diagrams
-6. add doc with patterns, reasoning, diagrams, etc
+5. in directors, add all the setters that exist in animal builders
+6. conditional logic to add just the parameters provided in product
+7. add documentation directory with diagrams
+8. add doc with patterns, reasoning, diagrams, etc
 
 [TODO] add doc of WHY i did builder + visitor
 
