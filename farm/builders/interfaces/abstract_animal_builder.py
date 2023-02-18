@@ -25,4 +25,8 @@ class AbstractAnimalBuilder(ABC):
     @abstractmethod
     def build_weight(self, weight:int) -> None:
         pass
+
+    @abstractmethod
+    def return_animal(self) -> None:
+        pass
     

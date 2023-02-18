@@ -1,7 +1,7 @@
 from typing import Any
 from typing_extensions import Unpack
 
-from farm.builders.directors.request_params import RequestParams
+from farm.builders.interfaces.request_params import RequestParams
 from farm.builders.interfaces.abstract_animal_builder import AbstractAnimalBuilder
 from farm.builders.interfaces.abstract_habitat_builder import AbstractHabitatBuilder
 
@@ -20,7 +20,8 @@ class AnimalHabitatDirector:
         animal_builder.build_name(kwargs["name"])
         animal_builder.build_weight(kwargs["weight"])
 
-        self.builder.build_add_animal(animal_builder.chicken)
+
+        self.builder.build_add_animal(animal_builder.return_animal())
 
     def get_habitat(self) -> Any:
         return self.builder.get_habitat()

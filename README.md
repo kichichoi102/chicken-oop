@@ -1,6 +1,14 @@
 # chicken-oop
 Based on OOP oriented concepts in Python I should create a model (python script) of a chicken.
 
+## [TODO]
+1. Add docstrings
+2. add tests
+3. add methods to get animals in habitat by name
+4. implement visitors in builder
+5. add documentation directory with diagrams
+6. add doc with patterns, reasoning, diagrams, etc
+
 [TODO] add doc of WHY i did builder + visitor
 
 ## OOP Design Patterns
