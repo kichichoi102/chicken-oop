@@ -23,3 +23,6 @@ class ChickenBuilder(AbstractAnimalBuilder):
 
     def build_weight(self, weight:int=1) -> None:
         self.chicken.weight = weight
+
+    def return_animal(self) -> Chicken:
+        return self.chicken
