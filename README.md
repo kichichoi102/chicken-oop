@@ -2,6 +2,9 @@
 Based on OOP oriented concepts in Python I should create a model (python script) of a chicken.
 
 ## [TODO]
+- add accept method to animal class
+- animal class needs to be extended from abstract class
+- maybe move animal and habitat to interfaces directory
 1. Add docstrings
 2. add tests
 3. add methods to get animals in habitat by name
