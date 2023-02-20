@@ -16,6 +16,12 @@ Based on OOP oriented concepts in Python I should create a model (python script)
 
 [TODO] add doc of WHY i did builder + visitor
 
+## Docker
+```bash
+~/chicken-oop$ docker build -t <image_name> .
+~/chicken-oop$ docker run --rm -it <image_name>
+```
+
 ## OOP Design Patterns
 ### Visitor:
 chicken - domain class
