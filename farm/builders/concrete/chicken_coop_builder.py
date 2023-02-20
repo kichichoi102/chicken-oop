@@ -57,10 +57,13 @@ class ConcreteChickenCoopBuilder(AbstractHabitatBuilder):
         self.chicken_coop.add(chicken)
 
     def get_habitat(self) -> str:
+        chicken_list = []
+        if self.chicken_coop.chickens[0] and self.chicken_coop.chickens[0].name:
+            chicken_list = [chicken.name for chicken in self.chicken_coop.chickens]
         return f"""
         Chicken Coop:
         Capacity: {self.chicken_coop.capacity}
         Material: {self.chicken_coop.material}
         Number: {len(self.chicken_coop.chickens)}
-        Animals: {[chicken.name for chicken in self.chicken_coop.chickens]}
+        Animals: {chicken_list}
         """

@@ -3,3 +3,4 @@
 /build
 /dist
 /farm.egg-info
+.vscode/*

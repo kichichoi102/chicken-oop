@@ -2,7 +2,6 @@ from typing import List
 
 from farm.domain.interfaces.habitat import Habitat
 from farm.domain.single_entities.pig import Pig
-from farm.domain.interfaces.animal import Animal
 
 class PigPen(Habitat):
     """
