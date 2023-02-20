@@ -29,6 +29,7 @@ def test_can_build_material(concrete_cow_pen_builder):
     assert concrete_cow_pen_builder.cow_pen.material == "Wood"
 
 def test_can_build_add_animal(concrete_cow_pen_builder, cow):
+    concrete_cow_pen_builder.build_capacity(10)
     concrete_cow_pen_builder.build_add_animal(cow)
     assert len(concrete_cow_pen_builder.cow_pen.cows) == 1
 

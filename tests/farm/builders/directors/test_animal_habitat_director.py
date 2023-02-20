@@ -28,6 +28,7 @@ def test_can_build_habitat(animal_habitat_director):
         and (animal_habitat_director.habitat_builder.chicken_coop.material == "Wood")
 
 def test_can_add_animal(animal_habitat_director, concrete_chicken_coop_builder, chicken_builder):
+    concrete_chicken_coop_builder.build_capacity(10)
     animal_habitat_director.add_animal(
         animal_builder = chicken_builder,
         species = "Chicken",

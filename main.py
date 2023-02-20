@@ -4,7 +4,8 @@
 # from farm.visitors.speak_visitor import SpeakVisitor
 
 from farm.visitors.collections.add_visitor import AddVisitor
-from farm.visitors.collections.get_animal_by_name import GetAnimalByNameVisitor
+from farm.visitors.collections.get_animals_visitor import GetAnimalsVisitor
+from farm.visitors.collections.get_animal_by_name_visitor import GetAnimalByNameVisitor
 from farm.domain.single_entities.chicken import Chicken
 from farm.domain.collections.chicken_coop import ChickenCoop
 from farm.domain.single_entities.cow import Cow
@@ -38,6 +39,7 @@ pig_pen_builder = ConcretePigPenBuilder()
 
 # test add visitor
 add_visitor = AddVisitor()
+get_animals_visitor = GetAnimalsVisitor()
 get_animal_by_name_visitor = GetAnimalByNameVisitor()
 # Chicken
 clucky = Chicken()
@@ -45,8 +47,9 @@ clucky.name = "Clucky"
 coop = ChickenCoop()
 coop.capacity = 1
 coop.accept(add_visitor, clucky)
-chickens = coop.accept(get_animal_by_name_visitor, "Clucky")
-print(chickens.name)
+chickens = coop.accept(get_animals_visitor, "")
+# chickens = coop.accept(get_animal_by_name_visitor, "Clucky")
+print(chickens[0].name)
 # Cow
 bessie = Cow()
 bessie.name = "Bessie"

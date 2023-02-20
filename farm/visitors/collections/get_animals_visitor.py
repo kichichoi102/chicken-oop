@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Any
 
 from farm.visitors.interfaces.habitat_visitor import HabitatVisitor
 from farm.domain.collections.chicken_coop import ChickenCoop
@@ -19,7 +19,7 @@ class GetAnimalsVisitor(HabitatVisitor):
     """
 
     # Liskov Substitution Principle
-    def visit_chicken_coop(self, chicken_coop: ChickenCoop, args) -> List[Chicken]:
+    def visit_chicken_coop(self, chicken_coop: ChickenCoop, args:Any="") -> List[Chicken]:
         """
         visit_chicken_coop get_animals method
 
@@ -34,7 +34,7 @@ class GetAnimalsVisitor(HabitatVisitor):
         return chicken_coop.chickens
 
     # Liskov Substitution Principle
-    def visit_cow_pen(self, cow_pen: CowPen, args) -> List[Cow]:
+    def visit_cow_pen(self, cow_pen: CowPen, args:Any="") -> List[Cow]:
         """
         visit_cow_pen get_animals method
 
@@ -49,7 +49,7 @@ class GetAnimalsVisitor(HabitatVisitor):
         return cow_pen.cows
 
     # Liskov Substitution Principle
-    def visit_pig_pen(self, pig_pen:PigPen, args) -> List[Pig]:
+    def visit_pig_pen(self, pig_pen:PigPen, args:Any="") -> List[Pig]:
         """
         visit_pig_pen get_animals method
 
