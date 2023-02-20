@@ -1,0 +1,10 @@
+[paths]
+source=
+    farm
+
+[report] 
+omit=
+    tests/*
+
+[html]
+directory = build/coverage.html
