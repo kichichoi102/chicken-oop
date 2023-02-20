@@ -36,7 +36,7 @@ class AddVisitor(HabitatVisitor):
         Raises:
             CapacityFullError: capacity chicken_coop full
         """
-        if (len(chicken_coop.chickens) < chicken_coop.capacity):
+        if len(chicken_coop.chickens) < chicken_coop.capacity:
             chicken_coop.chickens.append(chicken)
         else:
             raise CapacityFullError(AddVisitor.EXCEPTIONSTRING)
@@ -55,7 +55,7 @@ class AddVisitor(HabitatVisitor):
         Raises:
             CapacityFullError: capacity of cow_pen is full
         """
-        if (len(cow_pen.cows) < cow_pen.capacity):
+        if len(cow_pen.cows) < cow_pen.capacity:
             cow_pen.cows.append(cow)
         else:
             raise CapacityFullError(AddVisitor.EXCEPTIONSTRING)
@@ -74,7 +74,7 @@ class AddVisitor(HabitatVisitor):
         Raises:
             CapacityFullError: capacity of pig pen is full
         """
-        if (len(pig_pen.pigs) < pig_pen.capacity):
+        if len(pig_pen.pigs) < pig_pen.capacity:
             pig_pen.pigs.append(pig)
         else:
             raise CapacityFullError(AddVisitor.EXCEPTIONSTRING)

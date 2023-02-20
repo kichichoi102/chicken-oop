@@ -1,4 +1,4 @@
-from typing import List, Any, Optional, TypeVar
+from typing import List, Any, TypeVar
 
 from farm.domain.interfaces.habitat import Habitat
 from farm.domain.single_entities.pig import Pig

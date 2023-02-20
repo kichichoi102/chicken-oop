@@ -29,4 +29,4 @@ class Animal(ABC):
         Arguments:
             visitor -- Visitor
         """
-        pass        
+        pass

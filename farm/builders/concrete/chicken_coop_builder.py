@@ -63,7 +63,8 @@ class ConcreteChickenCoopBuilder(AbstractHabitatBuilder):
         get_animals_visitor = GetAnimalsVisitor()
         chicken_list = []
         if self.chicken_coop.chickens[0] and self.chicken_coop.chickens[0].name:
-            chicken_list = [chicken.name for chicken in self.chicken_coop.accept(get_animals_visitor)]
+            chicken_list = [chicken.name for chicken in \
+            self.chicken_coop.accept(get_animals_visitor)]
         return f"""
         Chicken Coop:
         Capacity: {self.chicken_coop.capacity}

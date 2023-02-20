@@ -45,21 +45,21 @@ class AnimalHabitatDirector:
         Method to create an instance of an animal with params
         outlined in RequestParams Type Interface
         """
-        if ("animal_builder" not in kwargs):
+        if "animal_builder" not in kwargs:
             raise TypeError('animal_builder parameter is required')
         animal_builder = kwargs['animal_builder']
 
-        if ("species" in kwargs):
+        if "species" in kwargs:
             animal_builder.build_species(kwargs["species"])
-        if ("name" in kwargs):
+        if "name" in kwargs:
             animal_builder.build_name(kwargs["name"])
-        if ("age" in kwargs):
+        if "age" in kwargs:
             animal_builder.build_age(kwargs["age"])
-        if ("gender" in kwargs):
+        if "gender" in kwargs:
             animal_builder.build_gender(kwargs["gender"])
-        if ("color" in kwargs):
+        if "color" in kwargs:
             animal_builder.build_color(kwargs["color"])
-        if ("weight" in kwargs):
+        if "weight" in kwargs:
             animal_builder.build_weight(kwargs["weight"])
 
 
