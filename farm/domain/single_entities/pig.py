@@ -22,4 +22,4 @@ class Pig(Animal):
         Arguments:
             visitor -- Visitor
         """
-        visitor.visit_pig(self)
+        return visitor.visit_pig(self)

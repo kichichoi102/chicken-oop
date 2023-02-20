@@ -21,7 +21,7 @@ def add_visitor():
 
 @pytest.fixture
 def get_animals_visitor():
-    return GetAnimalsVisitor
+    return GetAnimalsVisitor()
 
 @pytest.fixture
 def get_animal_by_name_visitor():
@@ -35,7 +35,6 @@ def test_can_add(pig_pen, pig, add_visitor):
     pig_pen.accept(add_visitor, pig)
     assert len(pig_pen.pigs) == 1
 
-@pytest.mark.skip(reason="Works on main but not on test")
 def test_can_get_animals(pig_pen, pig, add_visitor, get_animals_visitor):
     pig_pen.capacity = 10
     pig_pen.accept(add_visitor, pig)

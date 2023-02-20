@@ -25,4 +25,4 @@ class Chicken(Animal):
         Arguments:
             visitor -- Visitor
         """
-        visitor.visit_chicken(self)
+        return visitor.visit_chicken(self)
