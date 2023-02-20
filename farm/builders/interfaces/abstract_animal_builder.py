@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from farm.domain.interfaces.animal import Animal
 
 class AbstractAnimalBuilder(ABC):
     """
@@ -99,7 +100,7 @@ class AbstractAnimalBuilder(ABC):
         pass
 
     @abstractmethod
-    def return_animal(self) -> None:
+    def return_animal(self) -> Animal:
         """
         return_animal Super abstract method
 

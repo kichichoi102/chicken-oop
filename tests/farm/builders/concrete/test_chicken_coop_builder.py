@@ -29,6 +29,7 @@ def test_can_build_material(concrete_chicken_coop_builder):
     assert concrete_chicken_coop_builder.chicken_coop.material == "Wood"
 
 def test_can_build_add_animal(concrete_chicken_coop_builder, chicken):
+    concrete_chicken_coop_builder.build_capacity(10)
     concrete_chicken_coop_builder.build_add_animal(chicken)
     assert len(concrete_chicken_coop_builder.chicken_coop.chickens) == 1
 

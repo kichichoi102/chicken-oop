@@ -17,7 +17,7 @@ class PigBuilder(AbstractAnimalBuilder):
 
         Instantiates an instance of a pig
         """
-        self.pig = Pig()
+        self.pig: Pig = Pig()
 
     def build_species(self, species:str="Pig") -> None:
         """

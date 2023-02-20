@@ -1,7 +1,8 @@
-from typing import List
+from typing import List, Any, TypeVar
 
 from farm.domain.interfaces.habitat import Habitat
 from farm.domain.single_entities.cow import Cow
+from farm.visitors.interfaces.habitat_visitor import HabitatVisitor
 
 class CowPen(Habitat):
     """
@@ -18,30 +19,28 @@ class CowPen(Habitat):
         __init__ method
 
         Attributes:
-            chickens -- List[Cow]
+            cows -- List[Cow]
         """
         self.cows: List[Cow] = []
 
-    # Liskov Substitution Principle
-    def add(self, cow: Cow) -> None:
+    def accept(self, visitor:TypeVar("T", bound="HabitatVisitor"), args:Any="") -> Any:
         """
-        add method
+        accept visitor interface method
 
-        Method to add cow object to cow pen instance
+        Takes in a visitor instance to parse and run the incoming visitor methods
+
+        Methods:
+            add_visitor -- adds animal to respective habitat
+            get_animals_visitor -- gets all respective animals in habitat
+            get animal_by_name -- gets respective animal in habitat by name
 
         Arguments:
-            cow -- Cow
-        """
-        self.cows.append(cow)
+            args -- Cows
 
-    # Liskov Substitution Principle
-    def get_animals(self) -> List[Cow]:
-        """
-        get_animals method
-
-        Metho to get all cow objects in cow_pen instance
+        Keyword Arguments:
+            visitor -- HabitatVisitor (default: {"HabitatVisitor")})
 
         Returns:
-            self.cows -- List[Cows]
+            Any
         """
-        return self.cows
+        return visitor.visit_cow_pen(self, args)

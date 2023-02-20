@@ -1,7 +1,8 @@
-from typing import List
+from typing import List, Any, Optional, TypeVar
 from abc import ABC, abstractmethod
 
 from farm.domain.interfaces.animal import Animal
+from farm.visitors.interfaces.habitat_visitor import HabitatVisitor
 
 class Habitat(ABC):
     """
@@ -19,25 +20,24 @@ class Habitat(ABC):
         pass
 
     @abstractmethod
-    def add(self, animal:Animal) -> None:
+    def accept(self, visitor:TypeVar('T', bound='HabitatVisitor'), args:Any) -> Any:
         """
-        add abstract method
+        accept visitor interface method
 
-        Method to add Base animal class to base habitat
+        Takes in a visitor instance to parse and run the incoming visitor methods
+
+        Methods:
+            add_visitor -- adds animal to respective habitat
+            get_animals_visitor -- gets all respective animals in habitat
+            get animal_by_name -- gets respective animal in habitat by name
 
         Arguments:
-            animal -- _description_
-        """
-        pass
+            args -- Chickens
 
-    @abstractmethod
-    def get_animals(self) -> List[Animal]:
-        """
-        get_animals abstract method
-
-        Abstract Method to get all base animals in base habitat instance
+        Keyword Arguments:
+            visitor -- HabitatVisitor (default: {"HabitatVisitor")})
 
         Returns:
-            List[Animals]
+            Any
         """
         pass

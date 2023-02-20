@@ -51,7 +51,7 @@ class AbstractHabitatBuilder(ABC):
         pass
 
     @abstractmethod
-    def get_habitat(self) -> None:
+    def get_habitat(self) -> str:
         """
         get_habitat abstract method
 
