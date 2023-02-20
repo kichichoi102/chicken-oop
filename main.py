@@ -83,7 +83,6 @@ chicken_coop_director.add_animal(
     name="Henrietta", 
     species="Chicken", 
     weight=10, 
-    sound="cockadoodledoo1"
 )
 # Create new instance of Animal (Chicken)
 chicken_builder.__init__()
@@ -92,7 +91,6 @@ chicken_coop_director.add_animal(
     name="Clucky", 
     species="Chicken", 
     weight=11, 
-    sound="cockadoodledoo2"
 )
 
 # Add Cow, Bessie
@@ -101,7 +99,6 @@ cow_pen_director.add_animal(
     name="Bessie", 
     species="Cow", 
     weight=100, 
-    sound="Moo"
 )
 
 # Add Pig, Mimi
@@ -109,8 +106,7 @@ pig_pen_director.add_animal(
     animal_builder=pig_builder, 
     name="Mimi", 
     species="Pig", 
-    weight=50, 
-    sound="pig_sound"
+    weight=50
 )
 
 # Get Habitat Info

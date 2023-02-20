@@ -4,7 +4,9 @@ from farm.builders.interfaces.abstract_animal_builder import AbstractAnimalBuild
 
 class RequestParams(TypedDict):
     animal_builder: AbstractAnimalBuilder
+    species:str
     name: str
-    species: str
+    age: int
+    gender: str
+    color: str
     weight: int
-    sound: str

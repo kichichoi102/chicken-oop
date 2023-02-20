@@ -23,7 +23,7 @@ class ConcreteCowPenBuilder(AbstractHabitatBuilder):
         """
         self.cow_pen: CowPen = CowPen()
 
-    def build_capacity(self, capacity: int):
+    def build_capacity(self, capacity: int) -> None:
         """
         build_capacity method
 
@@ -35,7 +35,7 @@ class ConcreteCowPenBuilder(AbstractHabitatBuilder):
         """
         self.cow_pen.capacity = capacity
 
-    def build_material(self, material: str):
+    def build_material(self, material: str) -> None:
         """
         build_material method
 
@@ -47,7 +47,7 @@ class ConcreteCowPenBuilder(AbstractHabitatBuilder):
         """
         self.cow_pen.material = material
 
-    def build_add_animal(self, cow: Cow):
+    def build_add_animal(self, cow: Cow) -> None:
         """
         build_add_animal method
 

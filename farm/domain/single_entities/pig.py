@@ -1,4 +1,7 @@
+from typing import TypeVar, Any
+
 from farm.domain.interfaces.animal import Animal
+from farm.visitors.interfaces.animal_visitor import AnimalVisitor
 
 class Pig(Animal):
     """
@@ -9,10 +12,10 @@ class Pig(Animal):
     Arguments:
         Animal -- Animal Abstract Class
     """
-    def __init__(self):
+    def __init__(self) -> None:
         pass
 
-    def accept(self, visitor) -> None:
+    def accept(self, visitor:TypeVar('T', bound='AnimalVisitor')) -> Any:
         """
         accept visitor interface method
 

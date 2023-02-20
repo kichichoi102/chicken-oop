@@ -61,7 +61,7 @@ class AddVisitor(HabitatVisitor):
             raise CapacityFullError(AddVisitor.EXCEPTIONSTRING)
 
     # Liskov Substitution Principle
-    def visit_pig_pen(self, pig_pen: PigPen, pig:Pig):
+    def visit_pig_pen(self, pig_pen: PigPen, pig:Pig) -> None:
         """
         visit_pig_pen Visitor Method
 

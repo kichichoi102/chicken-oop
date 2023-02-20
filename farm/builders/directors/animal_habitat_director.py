@@ -2,7 +2,7 @@ from typing import Any
 from typing_extensions import Unpack
 
 from farm.builders.interfaces.request_params import RequestParams
-from farm.builders.interfaces.abstract_animal_builder import AbstractAnimalBuilder
+from farm.domain.interfaces.animal import Animal
 from farm.builders.interfaces.abstract_habitat_builder import AbstractHabitatBuilder
 
 class AnimalHabitatDirector:
@@ -38,7 +38,7 @@ class AnimalHabitatDirector:
         self.habitat_builder.build_capacity(capacity)
         self.habitat_builder.build_material(material)
 
-    def add_animal(self, **kwargs: Unpack[RequestParams]) -> None:
+    def add_animal(self, **kwargs: Unpack[RequestParams]) -> Animal:
         """
         add_animal method
 
@@ -65,7 +65,7 @@ class AnimalHabitatDirector:
 
         self.habitat_builder.build_add_animal(animal_builder.return_animal())
 
-    def get_habitat(self) -> Any:
+    def get_habitat(self) -> str:
         """
         get_habitat method
 
