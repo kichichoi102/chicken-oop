@@ -1,0 +1,2 @@
+class CapacityFullError(Exception):
+    pass

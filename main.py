@@ -1,9 +1,16 @@
-# from farm.domain.single_entities.chicken import Chicken
-# from farm.builder import Builder
-# from farm.visitors.feed_visitor import FeedVisitor
+# from farm.visitors.single_entities.feed_visitor import FeedVisitor
 # from farm.visitors.mate_visitor import MateVisitor
 # from farm.visitors.birth_visitor import BirthVisitor
 # from farm.visitors.speak_visitor import SpeakVisitor
+
+from farm.visitors.collections.add_visitor import AddVisitor
+from farm.visitors.collections.get_animal_by_name import GetAnimalByNameVisitor
+from farm.domain.single_entities.chicken import Chicken
+from farm.domain.collections.chicken_coop import ChickenCoop
+from farm.domain.single_entities.cow import Cow
+from farm.domain.collections.cow_pen import CowPen
+from farm.domain.single_entities.pig import Pig
+from farm.domain.collections.pig_pen import PigPen
 
 from farm.builders.animal_builders.chicken_builder import ChickenBuilder
 from farm.builders.animal_builders.cow_builder import CowBuilder
@@ -28,6 +35,35 @@ pig_builder = PigBuilder()
 chicken_coop_builder = ConcreteChickenCoopBuilder()
 cow_pen_builder = ConcreteCowPenBuilder()
 pig_pen_builder = ConcretePigPenBuilder()
+
+# test add visitor
+add_visitor = AddVisitor()
+get_animal_by_name_visitor = GetAnimalByNameVisitor()
+# Chicken
+clucky = Chicken()
+clucky.name = "Clucky"
+coop = ChickenCoop()
+coop.capacity = 1
+coop.accept(add_visitor, clucky)
+chickens = coop.accept(get_animal_by_name_visitor, "Clucky")
+print(chickens.name)
+# Cow
+bessie = Cow()
+bessie.name = "Bessie"
+pen = CowPen()
+pen.capacity = 1
+pen.accept(add_visitor, bessie)
+cows = pen.accept(get_animal_by_name_visitor, "Bessie")
+print(cows.name)
+# Pigs
+piggy = Pig()
+piggy.name = "Piggy"
+pen = PigPen()
+pen.capacity = 1
+pen.accept(add_visitor, piggy)
+pigs = pen.accept(get_animal_by_name_visitor, "Piggy")
+print(pigs.name)
+
 
 # Instantiate Directors and create habitats
 chicken_coop_director = AnimalHabitatDirector(chicken_coop_builder)
@@ -83,35 +119,16 @@ print(chicken_coop)
 print(cow_pen)
 print(pig_pen)
 
-# Create a chicken, cow, and an invalid animal using builder pattern
-# chicken_builder = Builder()
-# henrietta = chicken_builder.set_species("Chicken") \
-#     .set_name("Henrietta") \
-#     .set_breed("Silkie") \
-#     .set_age(1) \
-#     .set_gender("Female") \
-#     .set_color("White") \
-#     .set_feather_color("White") \
-#     .build()
-
-# cow_builder = Builder()
-# bessie = cow_builder.set_species("Cow") \
-#     .set_name("Bessie") \
-#     .set_breed("Hereford Cattle") \
-#     .set_age(5) \
-#     .set_gender("Male") \
-#     .set_color("Brown") \
-#     .set_number_of_horns(2) \
-#     .build()
-
 # Use visitor pattern to feed, mate, and give birth!
 
+# clucky = chicken_builder.return_animal()
 # feed_visitor = FeedVisitor()
+# clucky.accept(feed_visitor)
 # mate_visitor = MateVisitor()
 # birth_visitor = BirthVisitor()
 # speak_visitor = SpeakVisitor()
 
-# henrietta.introduce()
+
 # henrietta.accept(feed_visitor)
 # henrietta.accept(mate_visitor)
 # henrietta.accept(birth_visitor)

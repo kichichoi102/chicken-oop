@@ -1,4 +1,7 @@
 from abc import ABC, abstractmethod
+from typing import TypeVar
+
+from farm.visitors.interfaces.animal_visitor import AnimalVisitor
 
 class Animal(ABC):
     """
@@ -16,7 +19,7 @@ class Animal(ABC):
         pass
 
     @abstractmethod
-    def accept(self, visitor) -> None:
+    def accept(self, visitor:TypeVar("T", bound="AnimalVisitor")) -> None:
         """
         accept visitor interface abstract method
 

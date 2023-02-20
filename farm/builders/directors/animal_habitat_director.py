@@ -13,7 +13,7 @@ class AnimalHabitatDirector:
     add respective animal to the habitat instance
     """
 
-    def __init__(self, builder: AbstractHabitatBuilder) -> None:
+    def __init__(self, habitat_builder: AbstractHabitatBuilder) -> None:
         """
         __init__ method
 
@@ -22,7 +22,7 @@ class AnimalHabitatDirector:
         Arguments:
             builder -- AbstractHabitatBuilder
         """
-        self.builder = builder
+        self.habitat_builder = habitat_builder
 
     def build_habitat(self, capacity: int, material: str) -> None:
         """
@@ -35,8 +35,8 @@ class AnimalHabitatDirector:
             capacity -- int
             material -- str
         """
-        self.builder.build_capacity(capacity)
-        self.builder.build_material(material)
+        self.habitat_builder.build_capacity(capacity)
+        self.habitat_builder.build_material(material)
 
     def add_animal(self, **kwargs: Unpack[RequestParams]) -> None:
         """
@@ -45,13 +45,25 @@ class AnimalHabitatDirector:
         Method to create an instance of an animal with params
         outlined in RequestParams Type Interface
         """
+        if ("animal_builder" not in kwargs):
+            raise TypeError('animal_builder parameter is required')
         animal_builder = kwargs['animal_builder']
-        animal_builder.build_species(kwargs["species"])
-        animal_builder.build_name(kwargs["name"])
-        animal_builder.build_weight(kwargs["weight"])
+
+        if ("species" in kwargs):
+            animal_builder.build_species(kwargs["species"])
+        if ("name" in kwargs):
+            animal_builder.build_name(kwargs["name"])
+        if ("age" in kwargs):
+            animal_builder.build_age(kwargs["age"])
+        if ("gender" in kwargs):
+            animal_builder.build_gender(kwargs["gender"])
+        if ("color" in kwargs):
+            animal_builder.build_color(kwargs["color"])
+        if ("weight" in kwargs):
+            animal_builder.build_weight(kwargs["weight"])
 
 
-        self.builder.build_add_animal(animal_builder.return_animal())
+        self.habitat_builder.build_add_animal(animal_builder.return_animal())
 
     def get_habitat(self) -> Any:
         """
@@ -62,4 +74,4 @@ class AnimalHabitatDirector:
         Returns:
             habitat detail string
         """
-        return self.builder.get_habitat()
+        return self.habitat_builder.get_habitat()

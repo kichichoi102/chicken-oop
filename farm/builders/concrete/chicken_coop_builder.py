@@ -1,6 +1,8 @@
 from farm.builders.interfaces.abstract_habitat_builder import AbstractHabitatBuilder
 from farm.domain.collections.chicken_coop import ChickenCoop
 from farm.domain.single_entities.chicken import Chicken
+from farm.visitors.collections.add_visitor import AddVisitor
+from farm.visitors.collections.get_animals_visitor import GetAnimalsVisitor
 
 class ConcreteChickenCoopBuilder(AbstractHabitatBuilder):
     """
@@ -54,16 +56,18 @@ class ConcreteChickenCoopBuilder(AbstractHabitatBuilder):
         Arguments:
             chicken -- Chicken
         """
-        self.chicken_coop.add(chicken)
+        add_visitor = AddVisitor()
+        self.chicken_coop.accept(add_visitor, chicken)
 
     def get_habitat(self) -> str:
+        get_animals_builder = GetAnimalsVisitor()
         chicken_list = []
         if self.chicken_coop.chickens[0] and self.chicken_coop.chickens[0].name:
-            chicken_list = [chicken.name for chicken in self.chicken_coop.chickens]
+            chicken_list = [chicken.name for chicken in self.chicken_coop.accept(get_animals_builder)]
         return f"""
         Chicken Coop:
         Capacity: {self.chicken_coop.capacity}
         Material: {self.chicken_coop.material}
-        Number: {len(self.chicken_coop.chickens)}
+        Number: {len(self.chicken_coop.accept(get_animals_builder))}
         Animals: {chicken_list}
         """

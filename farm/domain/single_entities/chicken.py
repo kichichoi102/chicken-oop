@@ -1,4 +1,7 @@
+from typing import TypeVar
+
 from farm.domain.interfaces.animal import Animal
+from farm.visitors.interfaces.animal_visitor import AnimalVisitor
 
 class Chicken(Animal):
     """
@@ -12,7 +15,7 @@ class Chicken(Animal):
     def __init__(self) -> None:
         pass
 
-    def accept(self, visitor) -> None:
+    def accept(self, visitor:TypeVar('T', bound='AnimalVisitor')) -> None:
         """
         accept visitor interface method
 

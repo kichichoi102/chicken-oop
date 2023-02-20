@@ -1,6 +1,8 @@
 from farm.builders.interfaces.abstract_habitat_builder import AbstractHabitatBuilder
 from farm.domain.collections.pig_pen import PigPen
 from farm.domain.single_entities.pig import Pig
+from farm.visitors.collections.add_visitor import AddVisitor
+from farm.visitors.collections.get_animals_visitor import GetAnimalsVisitor
 
 class ConcretePigPenBuilder(AbstractHabitatBuilder):
     """
@@ -54,13 +56,18 @@ class ConcretePigPenBuilder(AbstractHabitatBuilder):
         Arguments:
             pig -- Pig
         """
-        self.pig_pen.add(pig)
+        add_visitor = AddVisitor()
+        self.pig_pen.accept(add_visitor, pig)
 
     def get_habitat(self) -> str:
+        get_animals_builder = GetAnimalsVisitor()
+        pigs_list = []
+        if self.pig_pen.pigs[0] and self.pig_pen.pigs[0].name:
+            pigs_list = [cow.name for cow in self.pig_pen.accept(get_animals_builder)]
         return f"""
         Pig Pen:
         Capacity: {self.pig_pen.capacity}
         Material: {self.pig_pen.material}
-        Number: {len(self.pig_pen.get_animals())}
-        Animals: {[pig.name for pig in self.pig_pen.get_animals()]}
+        Number: {len(self.pig_pen.accept(get_animals_builder))}
+        Animals: {pigs_list}
         """

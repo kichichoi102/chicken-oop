@@ -23,3 +23,9 @@ def test_can_get_animals(chicken_coop, chicken):
     chicken_coop.add(chicken)
     chickens = chicken_coop.get_animals()
     assert isinstance(chickens, List)
+
+def test_can_get_animal_by_name(chicken_coop, chicken):
+    chicken.name = "Henrietta"
+    chicken_coop.add(chicken)
+    chicken_obj = chicken_coop.get_animal_by_name("Henrietta")
+    assert chicken_obj.name == "Henrietta"
