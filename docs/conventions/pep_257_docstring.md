@@ -1,4 +1,4 @@
-# DocStrings
+# PEP 257 - Docstrings
 A Python docstring is a string used to document a Python module, class, function or method, so programmers can understand what it does without having to read the details of the implementation.
 
 ## Convention:

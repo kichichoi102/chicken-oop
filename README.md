@@ -1,33 +1,12 @@
 # chicken-oop
 Based on OOP oriented concepts in Python I should create a model (python script) of a chicken.
 
-## [TODO]
-7. add documentation directory with diagrams
-8. add doc with patterns, reasoning, diagrams, etc
-9. add doc of WHY i did builder + visitor
+## Project Report
+[Chicken OOP - Google Doc](https://docs.google.com/document/d/1d3POQjeTx4FpnYwPIogbDZY74NMiMPsBaIAlBNu410I/edit?usp=sharing)
 
-## Docker
-```bash
-~/chicken-oop$ docker build -t <image_name> .
-~/chicken-oop$ docker run --rm -it <image_name>
-```
+## Dev Dependencies
 
-## OOP Design Patterns
-### Visitor:
-chicken - domain class
-if feed, mate was part of chicken class, 
- - adds coupling to domain and actions
- - can add actions without interfering the other class
-
-### Builder:
- - can add new attributes quickly
-
-### Interfaces:
- - [TODO] add details here
-
-## Dependencies
-
-### Setup.py:
+### Setup.py (Optional):
 - Dependencies: setuptools, wheel
 - `python setup.py sdist bdist_wheel`
 
@@ -40,10 +19,63 @@ if feed, mate was part of chicken class,
 - type hints according to PEP 484
 - `mypy --strict --enable-incomplete-feature=Unpack <path_to_file>`
 
-### Pycodestyle:
-- [Not Implemented Yet]
-- pycodestyle is a tool to check your Python code against some of the style conventions in PEP 8.
-- https://github.com/PyCQA/pycodestyle
+
+## Usage - Python
+```bash
+<!-- Make Virtual Environment -->
+~/chicken-oop$ mkdir venv
+~/chicken-oop$ cd venv
+~/chicken-oop$ py -3.7 -m venv venv
+~/chicken-oop$ source venv/bin/activate
+<!-- Install Requirements -->
+~/chicken-oop$ pip install -r requirements.txt
+<!-- Run Validations and Tests -->
+~/chicken-oop$ pylint ./farm
+~/chicken-oop$ mypy --strict --enable-incomplete-feature=Unpack ./farm
+~/chicken-oop$ pytest
+<!-- Run Main -->
+~/chicken-oop$ python3 main.py
+```
+
+## Usage Docker
+```bash
+~/chicken-oop$ docker build -t <image_name> .
+~/chicken-oop$ docker run --rm -it <image_name>
+```
+
+## Expected Output
+```python
+Chicken Coop:
+Capacity: 10
+Material: Wood
+Number: 2
+Animals: ['Henrietta', 'Clucky']
+
+
+Cow Pen:
+Capacity: 20
+Material: Metal
+Number: 1
+Animals: ['Bessie']
+
+
+Pig Pen:
+Capacity: 5
+Material: Oak Wood
+Number: 1
+Animals: ['Mimi']
+```
+
+## OOP Design Patterns
+### Visitor:
+chicken - domain class
+if feed, mate was part of chicken class, 
+ - adds coupling to domain and actions
+ - can add actions without interfering the other class
+
+### Builder:
+ - can add new attributes quickly
+
 
 ## FAQs
 Q. Is it good practice in python to always include attributes in a class if a have a setter class that creates those attributes?
