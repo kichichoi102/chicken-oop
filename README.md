@@ -67,14 +67,12 @@ Animals: ['Mimi']
 ```
 
 ## OOP Design Patterns
-### Visitor:
-chicken - domain class
-if feed, mate was part of chicken class, 
- - adds coupling to domain and actions
- - can add actions without interfering the other class
 
 ### Builder:
- - can add new attributes quickly
+The builder design pattern is a creational pattern used in software development to create complex objects with many configurable attributes. 
+
+### Visitor:
+The visitor design pattern is a behavioral pattern used in software development to separate algorithmic operations from the objects on which they operate.
 
 
 ## FAQs
