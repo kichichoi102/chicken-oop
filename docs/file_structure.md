@@ -1,7 +1,7 @@
 # File Structure
 
 ## File Directories
-```
+```bash
 .
 └── .
     ├── Dockerfile
@@ -14,9 +14,11 @@
     │   │   ├── pep_257_docstring.md
     │   │   ├── pep_484_type_hints.md
     │   │   └── pep_8_style_guide.md
+    │   ├── design
+    │   │   ├── object_oriented_design.md
+    │   │   ├── object_oriented_programming.md
+    │   │   └── solid.md
     │   ├── file_structure.md
-    │   ├── object_oriented_design.md
-    │   ├── object_oriented_programming.md
     │   └── tests
     │       └── README.md
     ├── farm
@@ -107,4 +109,3 @@
                     ├── test_cow.py
                     └── test_pig.py
 ```
-
